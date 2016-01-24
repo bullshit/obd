@@ -23,7 +23,6 @@ protected:
 	int _fuelLevel;
 	int _speed;
 	int _temp;
-	bool _canEnabled;
 	MCP_CAN *_can;
 };
 
