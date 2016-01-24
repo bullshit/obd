@@ -3,7 +3,6 @@
 
 
 bool SimulatedCar::shouldRun(unsigned long time) {
-	Serial.println("SimulatedCar::shouldRun");
 	// @IDEA maybe random should run
 	return Thread::shouldRun(time);
 }

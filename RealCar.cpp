@@ -2,7 +2,6 @@
 
 
 bool RealCar::shouldRun(unsigned long time) {
-	Serial.println("RealCar::shouldRun");
 	if(CAN_MSGAVAIL == _can->checkReceive()) {
 		return true;
 	} 
@@ -11,16 +10,13 @@ bool RealCar::shouldRun(unsigned long time) {
 
 void RealCar::run(){
 	unsigned char len = 0;
-	unsigned char buf[8];
+	unsigned char buf[21];
 	Serial.println("RealCar::run");
-	if(CAN_MSGAVAIL == _can->checkReceive())            // check if data coming
-	{
-		_can->readMsgBuf(&len, buf);    // read data,  len: data length, buf: data buf
+	_can->readMsgBuf(&len, buf);
 
-		unsigned long canId = _can->getCanId();
+	unsigned long canId = _can->getCanId();
 
-		// @TODO parse canId
-	}
+	// @TODO parse canId
 	Thread::run();
 }
 
