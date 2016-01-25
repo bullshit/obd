@@ -17,7 +17,14 @@ void RealCar::run(){
 	unsigned long canId = _can->getCanId();
 
 	switch(canId) {
-		case:
+		case PID_SPEED:
+			break;
+		case PID_RPM:
+			break;
+		case PID_FUEL_LEVEL:
+			break;
+		case PID_COOLANT_TEMP:
+			break;
 	}
 
 	// @TODO parse canId

@@ -16,6 +16,7 @@ MCP_CAN CAN(CAN_SPI_CS_PIN);
 RealCar realCar = RealCar(&CAN);
 SimulatedCar simulatedCar = SimulatedCar(&CAN);
 
+
 //Display display;
 
 
@@ -109,7 +110,7 @@ CAN_INIT:
 	// Configure simulation
 	simulatedCar.onRun(simulationCallback);
 	simulatedCar.setInterval(SIMULATION_TIMEFRAME);
-	simulatedCar.enabled = false;
+	simulatedCar.enabled = true;
 
 	// Adds both threads to the controller
 	control.add(&realCar);
