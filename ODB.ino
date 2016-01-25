@@ -74,6 +74,7 @@ void enableAll() {
 
 void setup() {
 	Serial.begin(9600);
+	randomSeed(analogRead(0));
 /*
 	Display INIT
 */
@@ -103,11 +104,12 @@ CAN_INIT:
 	// Configure realCar
 	realCar.onRun(realdataCallback);
 	realCar.setInterval(REALDATA_TIMEFRAME);
+	realCar.enabled = false;
 
 	// Configure simulation
 	simulatedCar.onRun(simulationCallback);
 	simulatedCar.setInterval(SIMULATION_TIMEFRAME);
-	//simulatedCar.enabled = false;
+	simulatedCar.enabled = false;
 
 	// Adds both threads to the controller
 	control.add(&realCar);

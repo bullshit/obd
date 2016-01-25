@@ -11,7 +11,7 @@ public:
 	bool shouldRun(unsigned long time);
 	void run();
 protected:
-
+	void _sendMessage(INT32U pid,int value);
 };
 
 #endif
