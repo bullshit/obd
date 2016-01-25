@@ -12,7 +12,10 @@ public:
 	bool shouldRun(unsigned long time);
 	void run();
 protected:
-
+	int _parseRPMMessage(unsigned char* rpm);
+	int _parseFuelLevelMessage(unsigned char* fuelLevel);
+	int _parseSpeedMessage(unsigned char* speed);
+	int _parseTempMessage(unsigned char* temp);
 };
 
 #endif

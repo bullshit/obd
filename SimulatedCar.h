@@ -19,6 +19,10 @@ public:
 protected:
 	void _sendMessage(INT32U pid,int value);
 	bool _manuel = false;
+	byte* _createRPMMessage(int rpm);
+	byte* _createFuelLevelMessage(int fuelLevel);
+	byte* _createSpeedMessage(int speed);
+	byte* _createTempMessage(int temp);
 };
 
 #endif

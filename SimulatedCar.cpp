@@ -49,8 +49,42 @@ void SimulatedCar::run(){
 }
 
 void SimulatedCar::_sendMessage(INT32U pid,int value) {
-/*	unsigned int len = 0;
-	char *buf;
-	sprintf(buf, "%d", value);
-	// @TODO send */
+	byte *buf;
+	switch(pid) {
+		case PID_SPEED:
+			buf = _createSpeedMessage(value);
+			break;
+		case PID_RPM:
+			buf = _createRPMMessage(value);
+			break;
+		case PID_FUEL_LEVEL:
+			buf = _createFuelLevelMessage(value);
+			break;
+		case PID_COOLANT_TEMP:
+			buf = _createTempMessage(value);
+			break;
+	}
+
+	_can->sendMsgBuf(pid,0, 8, buf);
+}
+
+byte* SimulatedCar::_createRPMMessage(int rpm) {
+	byte *buf;
+	// @TODO
+	return buf;
+}
+byte* SimulatedCar::_createFuelLevelMessage(int fuelLevel) {
+	byte *buf;
+	// @TODO
+	return buf;
+}
+byte* SimulatedCar::_createSpeedMessage(int speed) {
+	byte *buf;
+	// @TODO
+	return buf;
+}
+byte* SimulatedCar::_createTempMessage(int temp) {
+	byte *buf;
+	// @TODO
+	return buf;
 }

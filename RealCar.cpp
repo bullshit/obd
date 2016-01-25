@@ -18,16 +18,31 @@ void RealCar::run(){
 
 	switch(canId) {
 		case PID_SPEED:
+			_speed = _parseSpeedMessage(buf);
 			break;
 		case PID_RPM:
+			_rpm = _parseRPMMessage(buf);
 			break;
 		case PID_FUEL_LEVEL:
+			_fuelLevel = _parseFuelLevelMessage(buf);
 			break;
 		case PID_COOLANT_TEMP:
+			_temp = _parseTempMessage(buf);
 			break;
 	}
 
-	// @TODO parse canId
 	Thread::run();
 }
 
+int RealCar::_parseRPMMessage(unsigned char* rpm) {
+	return 0;
+}
+int RealCar::_parseFuelLevelMessage(unsigned char* fuelLevel) {
+	return 0;
+}
+int RealCar::_parseSpeedMessage(unsigned char* speed) {
+	return 0;
+}
+int RealCar::_parseTempMessage(unsigned char* temp) {
+	return 0;
+}
