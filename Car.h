@@ -35,10 +35,10 @@ public:
 
 	virtual void run();
 protected:
-	int _rpm;
-	int _fuelLevel;
-	int _speed;
-	int _temp;
+	int _rpm = 0;
+	int _fuelLevel = 100;
+	int _speed = 0;
+	int _temp = 0;
 	MCP_CAN *_can;
 };
 

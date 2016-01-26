@@ -35,14 +35,18 @@ void RealCar::run(){
 }
 
 int RealCar::_parseRPMMessage(unsigned char* rpm) {
+	// @TODO
 	return 0;
 }
 int RealCar::_parseFuelLevelMessage(unsigned char* fuelLevel) {
+	// @TODO
 	return 0;
 }
 int RealCar::_parseSpeedMessage(unsigned char* speed) {
+	// @TODO
 	return 0;
 }
 int RealCar::_parseTempMessage(unsigned char* temp) {
+	// @TODO
 	return 0;
 }
